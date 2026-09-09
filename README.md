@@ -1,12 +1,16 @@
 # Boostrom Construction — speculative demo
 
-This repository is a **speculative website redesign** produced by [Novenworks](https://www.novenworks.com) for outreach.
+Novenworks organization repo: https://github.com/Novenworks/Boostrom-Construction-Demo
+
+This is a **speculative website redesign** produced by [Novenworks](https://www.novenworks.com) for outreach.
 
 - Boostrom Construction is **not** represented as a Novenworks client.
 - Business marks and photography remain property of their owners.
-- Contact paths on the demo (`949-500-1851`, `joshua@boostromconstruction.com`) are copied from the live first-party site.
+- Contact paths (`949-500-1851`, `joshua@boostromconstruction.com`) are copied from the live first-party site.
 
-Live original site: https://www.boostromconstruction.com/
+Original site: https://www.boostromconstruction.com/
+Live demo: https://boostrom-construction-demo.vercel.app
+Operator brief: `/outreach`
 
 ## Local setup
 
@@ -15,7 +19,7 @@ npm install
 npm run dev
 ```
 
-Open http://localhost:3000
+`prebuild` downloads first-party Wix photography into `public/images/`.
 
 ```bash
 npm run build
@@ -23,5 +27,3 @@ npm start
 ```
 
 Stack: Next.js App Router, TypeScript, Tailwind CSS.
-
-Operator brief (unlinked, noindex): `/outreach`
