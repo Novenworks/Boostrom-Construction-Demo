@@ -4,44 +4,32 @@ import { site } from "@/lib/site";
 export function Differentiation() {
   return (
     <section id="approach" className="bg-espresso text-paper-50">
-      <div className="mx-auto grid max-w-page items-center gap-10 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2">
+      <div className="section-shell grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
         <div>
-          <p className="section-label text-brass">Why this mix matters</p>
-          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight sm:text-4xl">
-            The remodel should read as one house, not four trades
+          <p className="section-label text-brass">One contractor</p>
+          <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-balance sm:text-4xl">
+            One contractor across the house and the yard
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-paper-100/85">
-            Boostrom already sells the interior and the outdoor space together: kitchens and baths,
-            then pools, decks, and indoor/outdoor living. The point is Orange County work that
-            connects how the house lives inside and out — one project story, not four disconnected
-            trades.
+          <p className="mt-4 text-base leading-relaxed text-paper-50/88">
+            Kitchen, bath, interior, and outdoor living do not have to be four separate jobs. Boostrom
+            handles the rooms you live in and the space around them together.
           </p>
-          <ul className="mt-6 space-y-3 text-sm leading-relaxed text-paper-100/85">
+          <ul className="mt-6 space-y-3 text-[0.9375rem] leading-relaxed text-paper-50/88">
             <li>California contractor license #{site.license}.</li>
             <li>Serving Orange County since {site.since}.</li>
-            <li>The same jobsite camera covers kitchens, baths, patios, and custom interiors.</li>
+            <li>Thoughtful planning, clear communication, and workmanship you can see.</li>
           </ul>
         </div>
-        <div className="grid grid-cols-2 gap-3">
-          <div className="relative aspect-[3/4] overflow-hidden rounded-sm">
-            <Image
-              src="/images/kitchen-counters.jpg"
-              alt="Kitchen counters from a Boostrom remodel"
-              fill
-              className="object-cover"
-              sizes="40vw"
-            />
-          </div>
-          <div className="relative mt-8 aspect-[3/4] overflow-hidden rounded-sm">
+        <div className="relative aspect-[16/11] overflow-hidden rounded-sm sm:aspect-[4/5]">
             <Image
               src="/images/outdoor-patio.jpg"
-              alt="Outdoor patio work by Boostrom Construction"
+              alt="Timber outdoor cover over a new paver patio"
               fill
-              className="object-cover"
-              sizes="40vw"
+              loading="eager"
+              className="object-cover object-[center_40%] sm:object-[40%_18%]"
+              sizes="(min-width: 1024px) 28rem, 100vw"
             />
           </div>
-        </div>
       </div>
     </section>
   );

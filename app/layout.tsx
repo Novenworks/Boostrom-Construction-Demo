@@ -50,10 +50,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/images/logo-white.png" />
       </head>
       <body className="min-h-screen bg-paper-50 font-sans text-ink-900 antialiased">
-        <p className="border-b border-brass/30 bg-espresso px-4 py-2 text-center text-xs leading-relaxed text-paper-100">
-          Novenworks speculative redesign — {site.name} is not a Novenworks client.
-          Marks and photography remain their owners&apos; property.
-        </p>
         {children}
       </body>
     </html>

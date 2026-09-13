@@ -1,11 +1,9 @@
-import { Capabilities } from "@/components/Capabilities";
+import { Company } from "@/components/Company";
 import { Differentiation } from "@/components/Differentiation";
 import { FinalCta } from "@/components/FinalCta";
 import { Hero } from "@/components/Hero";
 import { Process } from "@/components/Process";
 import { ProofStrip } from "@/components/ProofStrip";
-import { Reputation } from "@/components/Reputation";
-import { ServiceArea } from "@/components/ServiceArea";
 import { Services } from "@/components/Services";
 import { SiteFooter } from "@/components/SiteFooter";
 import { SiteHeader } from "@/components/SiteHeader";
@@ -22,9 +20,7 @@ export default function HomePage() {
         <Work />
         <Differentiation />
         <Process />
-        <Capabilities />
-        <Reputation />
-        <ServiceArea />
+        <Company />
         <FinalCta />
       </main>
       <SiteFooter />

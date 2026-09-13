@@ -1,32 +1,36 @@
 # QA notes
 
-Date: 13 Sep 2026. Production `next start` on localhost:3011 after `next build`.
+Date: 13 Sep 2026. Presentation polish checked against `next dev` on localhost:3020.
 
 ## Desktop ~1440px
 
+- No speculative/Novenworks banner or footer disclaimer — pass
 - Sticky espresso header, white logo, phone CTA — pass
-- Hero: vanity readable, overlay contrast, headline not viewport-consuming — pass
-- Proof strip four columns — pass
-- Service cards 2×2, honest crops — pass
-- Work grid captions wrap — pass
-- Approach split photos — pass
-- Form fields ≥ 44px, mailto disclosed — pass
-- Footer contacts + CSLB lookup; `/outreach` not linked — pass
+- Hero: vanity readable, overlay contrast, headline balances — pass
+- Proof strip four columns, license and phone are links — pass
+- Services: four text categories, no duplicate photo grid — pass
+- Work: kitchen featured, then patio + bedroom — pass
+- Approach: dark split with outdoor crop — pass
+- Quote + bathroom portrait, then estimate form — pass
+- Footer contacts + CSLB; `/outreach` not linked — pass
 - No horizontal overflow; no pageerrors — pass
 
-## Mobile ~390px
+## Mobile ~390px / 430px
 
-- Logo + Call + hamburger — pass
-- Menu opens/closes, 44px rows — pass
-- Hero CTAs wrap, type readable over vanity — pass
-- Service cards stack — pass
-- No horizontal overflow; no pageerrors — pass
+- Logo + Call + hamburger; menu 44px rows — pass
+- Hero CTAs wrap; type readable over vanity — pass
+- Services stack; work photos unique (bath stays in the hero) — pass
+- Approach shows one outdoor image; company quote has no second bathroom crop — pass
+- Form fields 48px, 16px type; phone or email helper — pass
+- No horizontal overflow — pass
 
-## Intermediate 768px
+## Intermediate 768px / 1024px
 
+- 768: hamburger + full phone — pass
+- 1024: full nav — pass
 - No overflow — pass
 
 ## `/outreach`
 
 - noindex metadata; not in sitemap/nav/footer
-- Image 404s until capture files exist (expected pre-capture)
+- Operator speculative disclosure retained

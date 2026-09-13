@@ -51,7 +51,7 @@ export default function OutreachPage() {
             Prospect 24/40. Speculative redesign. Do not imply a client relationship.
           </p>
           <Link href="/" className="inline-block text-sm text-paper-100 underline-offset-4 hover:underline">
-            View public concept
+            View public site
           </Link>
         </header>
 
@@ -101,16 +101,24 @@ export default function OutreachPage() {
               You Live In It.” Primary CTA is Request an Estimate (their free-estimate language).
             </li>
             <li>
-              Services grouped around buyer decisions (kitchen, bath, indoor/outdoor, whole-home)
-              with the four first-party jobsite photos; pools/decks/commercial stay secondary.
+              Public site speaks in Boostrom’s voice to a homeowner. Agency/redesign narrator copy
+              (“the photography was not doing the selling,” “grouped the way homeowners actually
+              decide,” “no invented timelines”) stays on this operator page — not on the homepage.
             </li>
             <li>
-              Work grid captions only what is visible, including in-progress kitchen and patio —
-              no fake luxury labels.
+              Services are a tight four-category list (kitchen, bath, indoor/outdoor, whole-home)
+              without repeating the jobsite photos. Pools, decks, new spaces, and commercial stay
+              in that intro, not a second card grid.
+            </li>
+            <li>
+              Work is editorial, not a duplicate 2×2 of the service cards: kitchen featured, then
+              patio and bedroom. Bathroom stays in the hero (and a desktop crop beside the quote).
+              Captions describe only what is visible.
             </li>
             <li>
               Orange County since 2000 and license #789193 sit in a proof strip; CSLB is a lookup
-              link, not an invented Active badge.
+              link, not an invented Active badge. No public speculative/Novenworks banner or footer
+              disclaimer.
             </li>
             <li>
               Estimate path is mailto to joshua@boostromconstruction.com plus working
@@ -135,6 +143,24 @@ export default function OutreachPage() {
               ©2021.
             </li>
           </ol>
+        </section>
+
+        <section className="space-y-4">
+          <h2 className="font-display text-2xl font-semibold">Why this polish (operator only)</h2>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-paper-100/85">
+            <li>
+              The photography already exists on the live site. It just was not doing the selling —
+              river/cabin stock led, while kitchen, bath, patio, and bedroom sat in a gallery.
+            </li>
+            <li>
+              Work is grouped the way homeowners actually decide (kitchen / bath / indoor-outdoor /
+              whole-home). That is a design strategy observation, not homepage copy.
+            </li>
+            <li>
+              Only four usable first-party project photos. The public site no longer treats the same
+              four files as both service cards and a portfolio grid.
+            </li>
+          </ul>
         </section>
 
         <section className="space-y-4">

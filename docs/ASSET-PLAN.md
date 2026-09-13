@@ -1,21 +1,17 @@
 # Asset-to-section plan
 
-Do not finish the homepage with stock while these first-party files remain unused.
+Do not finish the homepage with stock while these first-party files remain unused. Library is four project photos plus the logo — assign each photo one primary job.
 
 | Section | Asset | Why |
 | --- | --- | --- |
-| Header / footer / favicon | `logo-white.png` | Existing identity. Dark espresso chrome so the white mark reads. Do not invent a new logo. |
-| Hero | `bathroom-vanity.jpg` | Strongest finished interior. Supports kitchen/bath + how you live in the house. Overlay keeps type readable; do not crop off the vanity. |
-| Proof strip | Typography only (license, since 2000, OC, bonded/insured) | No extra photo needed. |
-| Kitchen remodeling | `kitchen-counters.jpg` | Real kitchen work. Caption must stay honest: counters in, finish work still open. |
-| Bathroom remodeling | `bathroom-vanity.jpg` | Same photograph as hero; service card crop can favor the stone and lighting. |
-| Indoor / outdoor living | `outdoor-patio.jpg` | Pools/decks/outdoor living claim made visible with actual patio/cover work, labeled in progress. |
-| Home design & remodeling | `bedroom-custom.jpg` | Interior carpentry beyond kitchen/bath. |
-| Work / project proof | All four photos | Grid with visible-in-photo captions. No invented project names, cities, or budgets. |
-| Differentiation | Pair kitchen + outdoor (or bath + outdoor) | Positioning is home + outdoor as one story. |
-| Process | No photos | Avoid fake “step” illustrations. |
-| Reputation | License line + their quote | No review photos exist. |
-| Local / service area | No map image | Copy only: Orange County. Do not fake a pin on Huntington Beach. |
-| Final CTA | `bedroom-custom.jpg` or `bathroom-vanity.jpg` | Lived-in finished room behind the estimate ask. |
+| Header / footer / favicon | `logo-white.png` | Existing identity. Dark espresso chrome so the white mark reads. |
+| Hero | `bathroom-vanity.jpg` | Strongest finished interior. Full-bleed; vanity stays in frame. |
+| Proof strip | Typography only | License, since 2000, OC, bonded/insured. |
+| Services | No photographs | Four short categories. Avoid repeating the work photos as service cards. |
+| Work / project proof | `kitchen-counters.jpg` (featured), `outdoor-patio.jpg`, `bedroom-custom.jpg` | Unique primary uses. Honest in-progress captions. Bathroom is already the hero. |
+| Differentiation | `outdoor-patio.jpg` timber/cover crop | Interior + yard as one story. Kitchen already featured in Work; avoid a second kitchen card. |
+| Process | No photos | No fake step illustrations. |
+| Company / Orange County | Bathroom portrait crop, desktop only | Quote + license + OC. Distinct from the hero overlay. Hidden on mobile. |
+| Final CTA | No photograph | Dark espresso form. Bedroom is already in Work. |
 
 Stock/Wix template files stay out of the customer-facing UI.

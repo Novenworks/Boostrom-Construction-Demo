@@ -28,7 +28,7 @@ export function SiteHeader() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm font-medium text-paper-100/85 hover:text-paper-50"
+              className="text-[0.9375rem] font-medium text-paper-50/90 hover:text-paper-50"
             >
               {link.label}
             </a>
@@ -38,7 +38,7 @@ export function SiteHeader() {
         <div className="flex items-center gap-2">
           <a
             href={`tel:${site.phoneTel}`}
-            className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-clay-500 px-3 py-2 text-sm font-semibold text-white hover:bg-clay-600"
+            className="inline-flex min-h-11 items-center gap-2 rounded-sm bg-clay-500 px-3 py-2 text-[0.9375rem] font-semibold text-white hover:bg-clay-600"
           >
             <Phone className="h-4 w-4" aria-hidden />
             <span className="hidden sm:inline">{site.phoneDisplay}</span>

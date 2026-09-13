@@ -1,155 +1,125 @@
 "use client";
 
 import { FormEvent, useState } from "react";
-import Image from "next/image";
 import { Mail, Phone } from "lucide-react";
 import { site } from "@/lib/site";
 
-const projectTypes = [
-  "Kitchen remodeling",
-  "Bathroom remodeling",
-  "Indoor / outdoor living",
-  "Whole-home remodeling",
-  "Pool or deck",
-  "Something else",
-] as const;
-
-type ProjectType = (typeof projectTypes)[number];
-
-function projectTypeLabel(value: ProjectType): string {
-  switch (value) {
-    case "Kitchen remodeling":
-    case "Bathroom remodeling":
-    case "Indoor / outdoor living":
-    case "Whole-home remodeling":
-    case "Pool or deck":
-    case "Something else":
-      return value;
-    default: {
-      const exhaustive: never = value;
-      return exhaustive;
-    }
-  }
-}
-
-export function FinalCta() {
+export function FinalCta({ asPage = false }: { asPage?: boolean }) {
+  const Title = asPage ? "h1" : "h2";
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [phone, setPhone] = useState("");
-  const [projectType, setProjectType] = useState<ProjectType>(projectTypes[0]);
   const [message, setMessage] = useState("");
+  const [error, setError] = useState("");
 
   function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    const trimmedPhone = phone.trim();
+    const trimmedEmail = email.trim();
+    if (!trimmedPhone && !trimmedEmail) {
+      setError("Add a phone number or email so we can follow up.");
+      return;
+    }
+    setError("");
     const body = [
       `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone}`,
-      `Project: ${projectTypeLabel(projectType)}`,
+      trimmedEmail ? `Email: ${trimmedEmail}` : null,
+      trimmedPhone ? `Phone: ${trimmedPhone}` : null,
       "",
       message,
-    ].join("\n");
+    ]
+      .filter((line) => line !== null)
+      .join("\n");
     const href = `mailto:${site.email}?subject=${encodeURIComponent(
-      `Estimate request — ${projectTypeLabel(projectType)}`
+      `Estimate request — ${site.name}`
     )}&body=${encodeURIComponent(body)}`;
     window.location.href = href;
   }
 
   return (
-    <section id="contact" className="relative overflow-hidden bg-espresso text-paper-50">
-      <Image
-        src="/images/bedroom-custom.jpg"
-        alt=""
-        fill
-        className="object-cover opacity-25"
-        sizes="100vw"
-      />
-      <div className="absolute inset-0 bg-espresso/75" />
-      <div className="relative mx-auto grid max-w-page gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-12">
-        <div className="lg:col-span-5 space-y-5">
-          <p className="section-label text-brass">Let&apos;s talk about your project</p>
-          <h2 className="font-display text-3xl font-semibold sm:text-4xl">{site.primaryCta}</h2>
-          <p className="text-sm leading-relaxed text-paper-100/85">
-            This form opens your email to {site.email}. It does not submit into a fake inbox. You
-            can also call.
+    <section id="contact" className="scroll-mt-24 bg-espresso text-paper-50">
+      <div className="mx-auto grid max-w-page gap-10 px-4 py-12 sm:px-6 sm:py-16 lg:grid-cols-12 lg:gap-14 lg:py-20">
+        <div className="space-y-5 lg:col-span-5">
+          <p className="section-label text-brass">Free estimate</p>
+          <Title className="font-display text-3xl font-semibold sm:text-4xl">{site.primaryCta}</Title>
+          <p className="text-base leading-relaxed text-paper-50/88">
+            Tell us what you are considering. Call, email, or send a note — whichever is easier.
           </p>
           <a
             href={`tel:${site.phoneTel}`}
-            className="flex min-h-12 items-center gap-3 rounded-sm border border-white/20 bg-white/5 px-4 font-semibold hover:border-brass"
+            className="flex min-h-12 items-center gap-3 rounded-sm border border-white/25 bg-white/5 px-4 text-base font-semibold hover:border-brass"
           >
             <Phone className="h-4 w-4 text-brass" aria-hidden />
             {site.phoneDisplay}
           </a>
           <a
             href={`mailto:${site.email}`}
-            className="flex min-h-12 items-center gap-3 rounded-sm border border-white/20 bg-white/5 px-4 font-semibold hover:border-brass"
+            className="flex min-h-12 items-center gap-3 rounded-sm border border-white/25 bg-white/5 px-4 text-base font-semibold hover:border-brass"
           >
             <Mail className="h-4 w-4 text-brass" aria-hidden />
             {site.email}
           </a>
         </div>
 
-        <form onSubmit={onSubmit} className="lg:col-span-7 space-y-4 rounded-sm border border-white/15 bg-espresso/80 p-6">
+        <form
+          onSubmit={onSubmit}
+          className="space-y-4 rounded-sm border border-white/15 bg-black/20 p-5 sm:p-6 lg:col-span-7"
+        >
+          <label className="block text-[0.9375rem] font-medium">
+            Name
+            <input
+              required
+              value={name}
+              onChange={(event) => setName(event.target.value)}
+              className="mt-1.5 min-h-12 w-full rounded-sm border border-white/25 bg-espresso px-3 text-base text-paper-50"
+              autoComplete="name"
+            />
+          </label>
           <div className="grid gap-4 sm:grid-cols-2">
-            <label className="block text-sm font-medium">
-              Name
+            <label className="block text-[0.9375rem] font-medium">
+              Phone
               <input
-                required
-                value={name}
-                onChange={(event) => setName(event.target.value)}
-                className="mt-1 min-h-11 w-full rounded-sm border border-white/20 bg-espresso px-3 text-paper-50"
-                autoComplete="name"
+                value={phone}
+                onChange={(event) => {
+                  setPhone(event.target.value);
+                  if (error) setError("");
+                }}
+                className="mt-1.5 min-h-12 w-full rounded-sm border border-white/25 bg-espresso px-3 text-base text-paper-50"
+                autoComplete="tel"
               />
             </label>
-            <label className="block text-sm font-medium">
+            <label className="block text-[0.9375rem] font-medium">
               Email
               <input
-                required
                 type="email"
                 value={email}
-                onChange={(event) => setEmail(event.target.value)}
-                className="mt-1 min-h-11 w-full rounded-sm border border-white/20 bg-espresso px-3 text-paper-50"
+                onChange={(event) => {
+                  setEmail(event.target.value);
+                  if (error) setError("");
+                }}
+                className="mt-1.5 min-h-12 w-full rounded-sm border border-white/25 bg-espresso px-3 text-base text-paper-50"
                 autoComplete="email"
               />
             </label>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <label className="block text-sm font-medium">
-              Phone
-              <input
-                value={phone}
-                onChange={(event) => setPhone(event.target.value)}
-                className="mt-1 min-h-11 w-full rounded-sm border border-white/20 bg-espresso px-3 text-paper-50"
-                autoComplete="tel"
-              />
-            </label>
-            <label className="block text-sm font-medium">
-              Project
-              <select
-                value={projectType}
-                onChange={(event) => setProjectType(event.target.value as ProjectType)}
-                className="mt-1 min-h-11 w-full rounded-sm border border-white/20 bg-espresso px-3 text-paper-50"
-              >
-                {projectTypes.map((type) => (
-                  <option key={type} value={type}>
-                    {type}
-                  </option>
-                ))}
-              </select>
-            </label>
-          </div>
-          <label className="block text-sm font-medium">
-            What are you thinking about?
+          <p className="text-[0.9375rem] text-paper-50/75">Phone or email — whichever you prefer.</p>
+          <label className="block text-[0.9375rem] font-medium">
+            What are you considering?
             <textarea
               required
               value={message}
               onChange={(event) => setMessage(event.target.value)}
-              className="mt-1 min-h-32 w-full rounded-sm border border-white/20 bg-espresso px-3 py-2 text-paper-50"
+              className="mt-1.5 min-h-28 w-full rounded-sm border border-white/25 bg-espresso px-3 py-2.5 text-base text-paper-50"
             />
           </label>
+          {error ? (
+            <p className="text-[0.9375rem] text-brass" role="alert">
+              {error}
+            </p>
+          ) : null}
           <button
             type="submit"
-            className="inline-flex min-h-12 items-center rounded-sm bg-clay-500 px-5 text-sm font-semibold text-white hover:bg-clay-600"
+            className="inline-flex min-h-12 items-center rounded-sm bg-clay-500 px-5 text-base font-semibold text-white hover:bg-clay-600"
           >
             {site.primaryCta}
           </button>
