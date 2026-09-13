@@ -2,26 +2,20 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  color-scheme: light;
-}
-
 html {
   scroll-behavior: smooth;
 }
 
 body {
-  background: #f7f2ea;
-  color: #1c1916;
+  background: #f8f4ec;
+  color: #1c1712;
 }
 
-::selection {
-  background: #b45a32;
-  color: #fff;
+:focus-visible {
+  outline: 2px solid #c46238;
+  outline-offset: 3px;
 }
 
-.img-cover {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+.section-label {
+  @apply text-xs font-semibold uppercase tracking-[0.2em] text-clay-600;
 }

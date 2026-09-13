@@ -1,29 +1,33 @@
-# Boostrom Construction — speculative demo
+# Boostrom Construction — speculative redesign
 
-Novenworks organization repo: https://github.com/Novenworks/Boostrom-Construction-Demo
+This repository is a **speculative Novenworks redesign** of [Boostrom Construction](https://www.boostromconstruction.com/). Boostrom Construction is **not** represented as a Novenworks client. Novenworks was not hired for this work.
 
-This is a **speculative website redesign** produced by [Novenworks](https://www.novenworks.com) for outreach.
+Business marks, the Boostrom Construction name, and photography remain the property of their owners. They are used here only to show how the existing business could be presented more clearly.
 
-- Boostrom Construction is **not** represented as a Novenworks client.
-- Business marks and photography remain property of their owners.
-- Contact paths (`949-500-1851`, `joshua@boostromconstruction.com`) are copied from the live first-party site.
+## Stack
 
-Original site: https://www.boostromconstruction.com/
-Live demo: https://boostrom-construction-demo.vercel.app
-Operator brief: `/outreach`
+- Next.js App Router
+- TypeScript
+- React
+- Tailwind CSS
 
 ## Local setup
 
 ```bash
 npm install
+npm run process-assets   # optional if public/images already populated
 npm run dev
 ```
 
-`prebuild` downloads first-party Wix photography into `public/images/`.
+Production build:
 
 ```bash
 npm run build
 npm start
 ```
 
-Stack: Next.js App Router, TypeScript, Tailwind CSS.
+Operator-only route: `/outreach` (noindex, unlinked).
+
+## Contact truth
+
+Estimate requests use the first-party phone and email. The homepage form opens a `mailto:` to `joshua@boostromconstruction.com`. It does not post to a fake backend.

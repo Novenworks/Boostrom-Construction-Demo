@@ -1,31 +1,33 @@
-import Navbar from "@/components/Navbar";
-import Hero from "@/components/Hero";
-import TrustStrip from "@/components/TrustStrip";
-import WorkSection from "@/components/WorkSection";
-import ServicesSection from "@/components/ServicesSection";
-import DifferenceSection from "@/components/DifferenceSection";
-import ProcessSection from "@/components/ProcessSection";
-import AboutSection from "@/components/AboutSection";
-import AreaSection from "@/components/AreaSection";
-import ContactSection from "@/components/ContactSection";
-import Footer from "@/components/Footer";
+import { Capabilities } from "@/components/Capabilities";
+import { Differentiation } from "@/components/Differentiation";
+import { FinalCta } from "@/components/FinalCta";
+import { Hero } from "@/components/Hero";
+import { Process } from "@/components/Process";
+import { ProofStrip } from "@/components/ProofStrip";
+import { Reputation } from "@/components/Reputation";
+import { ServiceArea } from "@/components/ServiceArea";
+import { Services } from "@/components/Services";
+import { SiteFooter } from "@/components/SiteFooter";
+import { SiteHeader } from "@/components/SiteHeader";
+import { Work } from "@/components/Work";
 
 export default function HomePage() {
   return (
-    <>
-      <Navbar />
+    <div id="top">
+      <SiteHeader />
       <main>
         <Hero />
-        <TrustStrip />
-        <WorkSection />
-        <ServicesSection />
-        <DifferenceSection />
-        <ProcessSection />
-        <AboutSection />
-        <AreaSection />
-        <ContactSection />
+        <ProofStrip />
+        <Services />
+        <Work />
+        <Differentiation />
+        <Process />
+        <Capabilities />
+        <Reputation />
+        <ServiceArea />
+        <FinalCta />
       </main>
-      <Footer />
-    </>
+      <SiteFooter />
+    </div>
   );
 }

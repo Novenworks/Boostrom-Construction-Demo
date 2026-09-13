@@ -1,125 +1,261 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
+import { site } from "@/lib/site";
+
+export const metadata: Metadata = {
+  title: "Operator outreach | Boostrom Construction demo",
+  robots: { index: false, follow: false },
+};
+
+const captures = [
+  {
+    file: "before-original-desktop.png",
+    title: "BEFORE — live original desktop",
+    note: "Full-page capture of boostromconstruction.com",
+  },
+  {
+    file: "after-desktop.png",
+    title: "AFTER — redesign desktop 1440",
+    note: "Full-page 1440px viewport",
+  },
+  {
+    file: "after-mobile.png",
+    title: "AFTER — redesign mobile 390",
+    note: "Full-page ~390px viewport",
+  },
+  {
+    file: "after-scroll.gif",
+    title: "Scrolling GIF",
+    note: "Must travel below the hero through multiple sections",
+  },
+  {
+    file: "after-scroll.mp4",
+    title: "Scrolling MP4",
+    note: "Same scroll path as the GIF",
+  },
+] as const;
+
 export default function OutreachPage() {
   return (
-    <main className="min-h-screen bg-mist px-4 py-12 text-ink md:px-8">
-      <div className="mx-auto max-w-3xl">
-        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-copper">
-          Operator only · noindex
-        </p>
-        <h1 className="font-display mt-2 text-4xl font-semibold">
-          Boostrom Construction — outreach brief
-        </h1>
-        <p className="mt-3 text-stone">
-          Speculative Novenworks redesign. The company is not a client.
-        </p>
-        <section className="mt-10 space-y-2 text-sm">
-          <h2 className="font-display text-2xl">Snapshot</h2>
-          <p>Boostrom Construction · Orange County, CA · remodeling / pools / decks</p>
-          <p>
-            Original:{" "}
-            <a className="underline" href="https://www.boostromconstruction.com/">
-              https://www.boostromconstruction.com/
-            </a>
+    <div className="min-h-screen bg-espresso px-4 py-12 text-paper-50 sm:px-6">
+      <div className="mx-auto max-w-5xl space-y-12">
+        <header className="space-y-3 border-b border-white/10 pb-8">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-brass">
+            Novenworks operator only · noindex · unlinked
           </p>
-          <p>Phone: 949-500-1851 · Email: joshua@boostromconstruction.com</p>
-          <p>License (first-party): #789193 · Since 2000 · Bonded & insured</p>
-          <p>
-            GitHub:{" "}
-            <a className="underline" href="https://github.com/Novenworks/Boostrom-Construction-Demo">
-              Novenworks/Boostrom-Construction-Demo
-            </a>
+          <h1 className="font-display text-3xl font-semibold sm:text-4xl">
+            Boostrom Construction — outreach pack
+          </h1>
+          <p className="max-w-3xl text-sm leading-relaxed text-paper-100/80">
+            Prospect 24/40. Speculative redesign. Do not imply a client relationship.
           </p>
-          <p>
-            Deployed:{" "}
-            <a className="underline" href="https://boostrom-construction-demo.vercel.app">
-              https://boostrom-construction-demo.vercel.app
-            </a>
-          </p>
+          <Link href="/" className="inline-block text-sm text-paper-100 underline-offset-4 hover:underline">
+            View public concept
+          </Link>
+        </header>
+
+        <section className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          <Fact label="Business" value="Boostrom Construction" />
+          <Fact label="Original URL" value={site.originalUrl} href={site.originalUrl} />
+          <Fact label="Deployed URL" value={site.deployedUrl} href={site.deployedUrl} />
+          <Fact label="Phone" value={site.phoneDisplay} href={`tel:${site.phoneTel}`} />
+          <Fact label="Email" value={site.email} href={`mailto:${site.email}`} />
+          <Fact label="GitHub" value={site.githubUrl} href={site.githubUrl} />
+          <Fact label="License (first-party)" value={`#${site.license}`} href={site.licenseUrl} />
+          <Fact label="Area they print" value="Orange County, CA since 2000" />
+          <Fact label="Agency" value="None found — Wix.com, footer ©2021" />
         </section>
-        <section className="mt-10">
-          <h2 className="font-display text-2xl">Original-site observations</h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-stone">
-            <li>Wix one-pager with a text-only story block and no work photo above the fold.</li>
-            <li>Four real job photos exist but sit in a small grid mixed with stock forest/cabin plates.</li>
-            <li>Primary conversion is mailto + tel — fine — but indoor-outdoor breadth is not obvious on first screen.</li>
-            <li>No named reviews, no process, no finished vs in-progress labels.</li>
-            <li>Copy already names kitchens, baths, new spaces, pools, and decks.</li>
+
+        <section className="space-y-4">
+          <h2 className="font-display text-2xl font-semibold">Original-site observations</h2>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-paper-100/85">
+            <li>
+              2021 Wix homepage still leads with wilderness river/cabin stock, while the actual
+              kitchen, bath, patio, and bedroom photos sit smaller in a gallery.
+            </li>
+            <li>
+              About page leftover template copy calls them a “leading San Francisco General
+              Contractor Company” while the homepage says Orange County.
+            </li>
+            <li>
+              Projects page pairs a stock contemporary pool house and a Sanofi office tower
+              (“Municipal Building,” both dated January 25, 2025) as if they were Boostrom jobs.
+            </li>
+            <li>
+              High-ticket breadth is on the page (kitchens, baths, indoor/outdoor, pools, decks,
+              commercial) but grouped as four equal Wix cards plus a wall of body copy.
+            </li>
+            <li>
+              Contact is strong and real — joshua@ and 949-500-1851 — sitting on a Dreamstime
+              water texture. License #789193 is a footer line, not a trust strip.
+            </li>
           </ul>
         </section>
-        <section className="mt-10">
-          <h2 className="font-display text-2xl">Redesign improvements</h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-stone">
-            <li>Hero uses the finished bathroom photo and a decision-oriented headline.</li>
-            <li>Verified proof strip: since 2000, license #789193, bonded & insured, phone.</li>
-            <li>Work gallery with honest finished / in-progress labels.</li>
-            <li>Services grouped around kitchen, bath, indoor-outdoor, custom.</li>
-            <li>Estimate form opens mailto to Joshua — no fake CRM.</li>
+
+        <section className="space-y-4">
+          <h2 className="font-display text-2xl font-semibold">Redesign improvements</h2>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-paper-100/85">
+            <li>
+              Hero uses their finished bath photo and the line “Remodel the Home. Rework the Way
+              You Live In It.” Primary CTA is Request an Estimate (their free-estimate language).
+            </li>
+            <li>
+              Services grouped around buyer decisions (kitchen, bath, indoor/outdoor, whole-home)
+              with the four first-party jobsite photos; pools/decks/commercial stay secondary.
+            </li>
+            <li>
+              Work grid captions only what is visible, including in-progress kitchen and patio —
+              no fake luxury labels.
+            </li>
+            <li>
+              Orange County since 2000 and license #789193 sit in a proof strip; CSLB is a lookup
+              link, not an invented Active badge.
+            </li>
+            <li>
+              Estimate path is mailto to joshua@boostromconstruction.com plus working
+              tel:+19495001851 — no silent fake backend.
+            </li>
           </ul>
         </section>
-        <section className="mt-10">
-          <h2 className="font-display text-2xl">Talking points</h2>
-          <ol className="mt-3 list-decimal space-y-2 pl-5 text-sm text-stone">
-            <li>They already photograph real kitchens, baths, and outdoor work. The homepage treats that proof as decoration.</li>
-            <li>Indoor-outdoor + pools/decks is named on the live site and visually led by a river stock photo.</li>
-            <li>This is a speculative redesign, not a claim that Novenworks was hired.</li>
+
+        <section className="space-y-4">
+          <h2 className="font-display text-2xl font-semibold">Talking points</h2>
+          <ol className="list-decimal space-y-2 pl-5 text-sm leading-relaxed text-paper-100/85">
+            <li>
+              The company already has the high-ticket mix and the real photos; the 2021 Wix shell
+              still presents like a cabin-and-river template.
+            </li>
+            <li>
+              Indoor/outdoor is the truthful differentiator they already write — kitchens and baths
+              plus pools, decks, and patio work — and the photos finally show that together.
+            </li>
+            <li>
+              Easy personalization: the public inbox is joshua@, and the live footer still says
+              ©2021.
+            </li>
           </ol>
         </section>
-        <section className="mt-10">
-          <h2 className="font-display text-2xl">Personalization hooks</h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-stone">
-            <li>Address Joshua — email on the live site and CEO on the Huntington Beach filing.</li>
-            <li>Mention the finished dual-sink bath photo specifically.</li>
-            <li>Family company. Keep the tone peer-to-peer.</li>
+
+        <section className="space-y-4">
+          <h2 className="font-display text-2xl font-semibold">Personalization hooks</h2>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-paper-100/85">
+            <li>The finished bath with the backlit mirror is already on their homepage, unused as a hero.</li>
+            <li>About-page “San Francisco” leftover vs Orange County homepage — a concrete, non-insulting observation.</li>
+            <li>
+              Aggregators/filings mention Huntington Beach and Joshua Boostrom; the live site does
+              not print those. Use only as a research note, not as a public claim.
+            </li>
           </ul>
         </section>
-        <section className="mt-10">
-          <h2 className="font-display text-2xl">What not to say</h2>
-          <ul className="mt-3 list-disc space-y-2 pl-5 text-sm text-stone">
-            <li>Do not insult the current site, Wix, a designer, or an agency. No agency credit was found.</li>
-            <li>Do not claim Novenworks was hired or owns the photography/logo.</li>
-            <li>Do not invent ROI, lead volume, SEO rankings, or review totals.</li>
-            <li>Do not present the forest or cabin images as completed Boostrom jobs.</li>
-            <li>Do not quote a fencing license, staff size, warranty term, or street address as a first-party homepage fact.</li>
+
+        <section className="space-y-3 rounded-sm border border-rose-400/40 bg-rose-950/20 p-6">
+          <h2 className="font-display text-2xl font-semibold text-rose-200">What not to say</h2>
+          <ul className="list-disc space-y-2 pl-5 text-sm leading-relaxed text-rose-100/90">
+            <li>Do not say the website sucks, that Wix is amateur, or insult a designer/agency (none is credited).</li>
+            <li>Do not imply Novenworks was hired or that this is the live Boostrom site.</li>
+            <li>Do not claim ROI, lead volume, SEO rankings, or performance wins.</li>
+            <li>Do not claim ownership of Boostrom photography or invent a new logo story.</li>
+            <li>
+              Do not state CSLB “Active,” class B, staff names, Huntington Beach address, review
+              counts, or San Francisco — those are unverified, omitted, or leftover template copy.
+            </li>
+            <li>Do not present the Projects-page stock (Sanofi tower, pool house) as their completed work.</li>
           </ul>
         </section>
-        <section className="mt-10">
-          <h2 className="font-display text-2xl">Subject lines</h2>
-          <ul className="mt-3 list-disc space-y-1 pl-5 text-sm">
-            <li>Joshua — a speculative homepage using your bath and patio photos</li>
-            <li>Your work is stronger than the 2021 Wix frame around it</li>
-            <li>Orange County indoor-outdoor remodeling, shown as one story</li>
-          </ul>
+
+        <section className="space-y-4">
+          <h2 className="font-display text-2xl font-semibold">Subject lines</h2>
+          <ol className="list-decimal space-y-2 pl-5 text-sm leading-relaxed text-paper-100/85">
+            <li>Joshua — a speculative homepage for Boostrom Construction</li>
+            <li>Your bath and patio photos, not the river stock</li>
+            <li>Orange County since 2000 — the site can say that more clearly</li>
+          </ol>
         </section>
-        <section className="mt-10">
-          <h2 className="font-display text-2xl">Cold email</h2>
-          <pre className="mt-3 whitespace-pre-wrap rounded bg-cream p-4 text-sm leading-relaxed text-ink">{`Joshua —
 
-I looked at boostromconstruction.com this week. The company has been in Orange County since 2000, and the site already has real job photos — the dual-sink bath, the kitchen island, the patio under the new cover. On the live page those pictures sit in a small grid under a text-only “Our Story” block.
+        <section className="space-y-4">
+          <h2 className="font-display text-2xl font-semibold">Cold email</h2>
+          <pre className="whitespace-pre-wrap rounded-sm border border-white/10 bg-black/30 p-5 text-sm leading-relaxed text-paper-100/90">
+            {`Hi Joshua,
 
-Novenworks built a speculative redesign so you can see the same business with the work in front: https://boostrom-construction-demo.vercel.app
+I was looking at boostromconstruction.com. The kitchen, bath, patio, and bedroom photos are real Orange County work; the homepage still leads with the 2021 Wix river/cabin treatment, and the About page still has leftover “San Francisco” template copy.
 
-It is not a pitch that we were hired. Marks and photos stay yours. If the direction is useful, I am happy to walk through it on a short call.
+Novenworks put together a speculative redesign (not a client project) that puts those jobsite photos first, groups kitchen / bath / indoor-outdoor / whole-home the way a homeowner actually decides, and keeps the estimate path on your published phone and email.
 
-Vincent
-Novenworks`}</pre>
+Preview: ${site.deployedUrl}
+
+If it is useful, I am happy to walk through it. If not, no issue — the concept is there either way.
+
+Vince
+Novenworks`}
+          </pre>
         </section>
-        <section className="mt-10">
-          <h2 className="font-display text-2xl">Follow-up</h2>
-          <pre className="mt-3 whitespace-pre-wrap rounded bg-cream p-4 text-sm leading-relaxed text-ink">{`Joshua — circling back on the speculative Boostrom homepage. Same URL as before. Happy to pull it down if it is not relevant.`}</pre>
+
+        <section className="space-y-4">
+          <h2 className="font-display text-2xl font-semibold">Short follow-up</h2>
+          <pre className="whitespace-pre-wrap rounded-sm border border-white/10 bg-black/30 p-5 text-sm leading-relaxed text-paper-100/90">
+            {`Hi Joshua — looping back on the speculative Boostrom homepage. It uses the bath vanity and patio photos already on your site, with estimate requests still going to ${site.email} / ${site.phoneDisplay}. ${site.deployedUrl} — happy to send the before/after if easier.`}
+          </pre>
         </section>
-        <section className="mt-10">
-          <h2 className="font-display text-2xl">Captures</h2>
-          <p className="mt-3 text-sm text-stone">
-            Preview files (added as they are generated):
-          </p>
-          <ul className="mt-2 list-disc pl-5 text-sm">
-            <li><a className="underline" href="/outreach/before-original-desktop.png">before-original-desktop.png</a></li>
-            <li><a className="underline" href="/outreach/after-desktop.png">after-desktop.png</a></li>
-            <li><a className="underline" href="/outreach/after-mobile.png">after-mobile.png</a></li>
-            <li><a className="underline" href="/outreach/after-scroll.gif">after-scroll.gif</a></li>
-            <li><a className="underline" href="/outreach/after-scroll.mp4">after-scroll.mp4</a></li>
-          </ul>
+
+        <section className="space-y-6">
+          <h2 className="font-display text-2xl font-semibold">Captures</h2>
+          <div className="grid gap-8">
+            {captures.map((capture) => (
+              <figure key={capture.file} className="space-y-3">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <figcaption>
+                    <p className="font-semibold">{capture.title}</p>
+                    <p className="text-sm text-paper-100/70">{capture.note}</p>
+                  </figcaption>
+                  <a className="text-sm underline" href={`/outreach/${capture.file}`}>
+                    {capture.file}
+                  </a>
+                </div>
+                {capture.file.endsWith(".mp4") ? (
+                  <video
+                    className="w-full rounded-sm border border-white/10"
+                    controls
+                    src={`/outreach/${capture.file}`}
+                  />
+                ) : (
+                  <Image
+                    src={`/outreach/${capture.file}`}
+                    alt={capture.title}
+                    width={capture.file.includes("mobile") ? 390 : 1440}
+                    height={capture.file.includes("mobile") ? 844 : 900}
+                    className="h-auto w-full rounded-sm border border-white/10 bg-black/40"
+                    unoptimized
+                  />
+                )}
+              </figure>
+            ))}
+          </div>
         </section>
       </div>
-    </main>
+    </div>
+  );
+}
+
+function Fact({
+  label,
+  value,
+  href,
+}: {
+  label: string;
+  value: string;
+  href?: string;
+}) {
+  return (
+    <div className="rounded-sm border border-white/10 bg-black/20 p-4">
+      <p className="text-xs uppercase tracking-[0.14em] text-brass">{label}</p>
+      {href ? (
+        <a className="mt-2 block break-all text-sm underline-offset-2 hover:underline" href={href}>
+          {value}
+        </a>
+      ) : (
+        <p className="mt-2 text-sm">{value}</p>
+      )}
+    </div>
   );
 }
