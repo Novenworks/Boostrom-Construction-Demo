@@ -193,10 +193,10 @@ export default function OutreachPage() {
         <section className="space-y-4">
           <h2 className="font-display text-2xl font-semibold">Subject lines</h2>
           <ol className="list-decimal space-y-2 pl-5 text-sm leading-relaxed text-paper-100/85">
-            <li>Joshua, I made something for Boostrom Construction</li>
-            <li>Had an idea for Boostrom Construction</li>
-            <li>Tried something with the Boostrom Construction site</li>
-          </ol>
+          <li>Joshua, I made something for Boostrom Construction</li>
+          <li>Had an idea for Boostrom Construction</li>
+          <li>Tried something with the Boostrom Construction site</li>
+        </ol>
         </section>
 
         <section className="space-y-4">
@@ -204,15 +204,13 @@ export default function OutreachPage() {
           <pre className="whitespace-pre-wrap rounded-sm border border-white/10 bg-black/30 p-5 text-sm leading-relaxed text-paper-100/90">
             {`Hi Joshua,
 
-I came across Boostrom Construction and spent some time looking through the site.
+I came across Boostrom Construction and ended up spending some time on the site.
 
-There was enough good stuff there that I started thinking about how I would present it differently, so I built a version instead of just sending you suggestions.
+You already have real work to show. I had an idea for giving the projects and proof more room, so I built a version.
 
 https://boostrom-construction-demo.vercel.app
 
-Thought you might be curious to see where I took it.
-
-If you like the direction, I can show you what I changed.
+Thought you might be curious to see it. If the direction clicks, I can show you what I changed.
 
 Vincent
 Novenworks`}
