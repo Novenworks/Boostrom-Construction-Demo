@@ -193,9 +193,9 @@ export default function OutreachPage() {
         <section className="space-y-4">
           <h2 className="font-display text-2xl font-semibold">Subject lines</h2>
           <ol className="list-decimal space-y-2 pl-5 text-sm leading-relaxed text-paper-100/85">
-            <li>Joshua — a speculative homepage for Boostrom Construction</li>
-            <li>Your bath and patio photos, not the river stock</li>
-            <li>Orange County since 2000 — the site can say that more clearly</li>
+            <li>Joshua, I made something for Boostrom Construction</li>
+            <li>Had an idea for Boostrom Construction</li>
+            <li>Tried something with the Boostrom Construction site</li>
           </ol>
         </section>
 
@@ -204,15 +204,17 @@ export default function OutreachPage() {
           <pre className="whitespace-pre-wrap rounded-sm border border-white/10 bg-black/30 p-5 text-sm leading-relaxed text-paper-100/90">
             {`Hi Joshua,
 
-I was looking at boostromconstruction.com. The kitchen, bath, patio, and bedroom photos are real Orange County work; the homepage still leads with the 2021 Wix river/cabin treatment, and the About page still has leftover “San Francisco” template copy.
+I came across Boostrom Construction and spent some time looking through the site.
 
-Novenworks put together a speculative redesign (not a client project) that puts those jobsite photos first, groups kitchen / bath / indoor-outdoor / whole-home the way a homeowner actually decides, and keeps the estimate path on your published phone and email.
+There was enough good stuff there that I started thinking about how I would present it differently, so I built a version instead of just sending you suggestions.
 
-Preview: ${site.deployedUrl}
+https://boostrom-construction-demo.vercel.app
 
-If it is useful, I am happy to walk through it. If not, no issue — the concept is there either way.
+Thought you might be curious to see where I took it.
 
-Vince
+If you like the direction, I can show you what I changed.
+
+Vincent
 Novenworks`}
           </pre>
         </section>
